@@ -17,6 +17,8 @@ spec:
       - image: registry.traefik.k8.darkgamex.ch/openttd:1.9.3
         imagePullPolicy: Always
         name: openttd-container
+        stdin: true 
+        tty: true 
         volumeMounts:
         - mountPath: /home/openttd/.openttd/save
           name: openttd-saves
