@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: openttd-deployment
+  labels:
+    app: openttd
+spec:
+  selector:
+    matchLabels:
+      app: openttd
+  template:
+    metadata:
+      labels:
+        app: openttd
+    spec:
+      containers:
+      - image: registry.traefik.k8.darkgamex.ch/openttd:1.9.3
+        imagePullPolicy: Always
+        name: openttd-container
