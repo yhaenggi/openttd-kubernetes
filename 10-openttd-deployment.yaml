@@ -17,3 +17,16 @@ spec:
       - image: registry.traefik.k8.darkgamex.ch/openttd:1.9.3
         imagePullPolicy: Always
         name: openttd-container
+        volumeMounts:
+        - mountPath: /home/openttd/.openttd/save
+          name: openttd-saves
+        - mountPath: /home/openttd/.openttd/openttd.cfg
+          name: openttd-config
+          subPath: openttd.cfg
+      volumes:
+      - name: openttd-saves
+        persistentVolumeClaim:
+          claimName: openttd-saves
+      - name: openttd-config
+        configMap:
+          name: openttd-config
