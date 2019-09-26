@@ -22,6 +22,8 @@ spec:
         command: ["bash"]
         args: ["-c", "/usr/games/openttd -D $(find /home/openttd/.openttd/save/ -type f -printf '%T@ %p\n' | sort -n | awk '{print \"-g \" $2}'|tail -n 1) && tail -f /dev/null"]
         volumeMounts:
+        - mountPath: /home/openttd/.openttd/content_download
+          name: openttd-content-download
         - mountPath: /home/openttd/.openttd/save
           name: openttd-saves
         - mountPath: /home/openttd/.openttd/openttd.cfg
@@ -31,6 +33,9 @@ spec:
       - name: openttd-saves
         persistentVolumeClaim:
           claimName: openttd-saves
+      - name: openttd-content-download
+        persistentVolumeClaim:
+          claimName: openttd-content-download
       - name: openttd-config
         configMap:
           name: openttd-config
