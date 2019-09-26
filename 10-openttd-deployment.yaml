@@ -14,7 +14,7 @@ spec:
         app: openttd
     spec:
       containers:
-      - image: registry.traefik.k8.darkgamex.ch/openttd:1.9.3
+      - image: yhaenggi/openttd:1.9.3
         imagePullPolicy: Always
         name: openttd-container
         stdin: true 
