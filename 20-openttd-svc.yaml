@@ -35,3 +35,22 @@ spec:
       protocol: TCP
   selector:
     app: openttd
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: openttd-service-admin-tcp
+  namespace: openttd
+  annotations:
+    metallb.universe.tf/allow-shared-ip: "true"
+  labels:
+    app: openttd
+spec:
+  type: LoadBalancer
+  loadBalancerIP: 10.13.8.15
+  ports:
+    - name: openttd-admin-tcp
+      port: 3977
+      protocol: TCP
+  selector:
+    app: openttd
