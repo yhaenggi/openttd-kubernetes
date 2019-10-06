@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: openttd-service-tcp
+  name: openttd-service-udp
   namespace: openttd
   annotations:
     metallb.universe.tf/allow-shared-ip: "true"
@@ -20,7 +20,7 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: openttd-service-udp
+  name: openttd-service-tcp
   namespace: openttd
   annotations:
     metallb.universe.tf/allow-shared-ip: "true"
