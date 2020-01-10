@@ -10,6 +10,7 @@ metadata:
 spec:
   type: LoadBalancer
   loadBalancerIP: 10.13.8.15
+  externalTrafficPolicy: Local
   ports:
     - name: openttd-udp
       port: 3979
@@ -29,6 +30,7 @@ metadata:
 spec:
   type: LoadBalancer
   loadBalancerIP: 10.13.8.15
+  externalTrafficPolicy: Local
   ports:
     - name: openttd-tcp
       port: 3979
@@ -48,6 +50,7 @@ metadata:
 spec:
   type: LoadBalancer
   loadBalancerIP: 10.13.8.15
+  externalTrafficPolicy: Local
   ports:
     - name: openttd-admin-tcp
       port: 3977
