@@ -14,7 +14,7 @@ spec:
         app: openttd
     spec:
       containers:
-      - image: yhaenggi/openttd:1.9.3
+      - image: yhaenggi/openttd:1.10.0
         imagePullPolicy: Always
         name: openttd-container
         stdin: true 
